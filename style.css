@@ -1,0 +1,302 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #020617;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* ALBUM SECTION */
+.album-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.album-section h2 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.album-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(56,189,248,0.1), transparent);
+}
+
+.album-card {
+  position: relative;
+  width: 250px;
+  margin: auto;
+  background: #0f172a;
+  border-radius: 20px;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+/* NEON BORDER GLOW */
+.album-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, #38bdf8, #6366f1, #1db954);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+/* GLOW ON HOVER */
+.album-card:hover::before {
+  opacity: 1;
+}
+
+/* CARD HOVER EFFECT */
+.album-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.4),
+              0 0 50px rgba(99, 102, 241, 0.3);
+}
+
+.album-cover {
+  width: 100%;
+  border-radius: 12px;
+  transition: 0.4s;
+}
+
+.album-card:hover .album-cover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.6);
+}
+
+
+.album-info h3 {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.album-card:hover .album-info h3 {
+  color: #38bdf8;
+  text-shadow: 0 0 10px #38bdf8,
+               0 0 20px #38bdf8;
+}
+
+.play-btn {
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  background: #1db954;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  color: black;
+  font-size: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.3s;
+  box-shadow: 0 0 10px #1db954,
+              0 0 20px #1db954,
+              0 0 40px #1db954;
+}
+
+/* SHOW BUTTON */
+.album-card:hover .play-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* PULSE EFFECT */
+.play-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px #1db954,
+              0 0 40px #1db954,
+             0 0 60px #1db954;
+}
+
+/* BUTTON HOVER */
+.play-btn:hover {
+  transform: scale(1.1);
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(2, 6, 23, 0.6);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #e2e8f0;
+  margin: 0 12px;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: 
+    linear-gradient(rgba(2,6,23,0.7), rgba(2,6,23,0.9)),
+    url('Sa\ Kawalan.jpg.png') center/cover no-repeat;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  animation: fadeUp 1s ease;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #cbd5f5;
+  margin-bottom: 20px;
+  animation: fadeUp 1.5s ease;
+}
+
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+  transition: all 0.3s ease;
+  animation: fadeUp 2s ease;
+}
+
+.hero button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.6);
+}
+
+/* FEATURES */
+.features {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 20px;
+  width: 220px;
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.3);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #020617;
+  color: #94a3b8;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(2,6,23,0.95);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .feature-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
